@@ -1,0 +1,77 @@
+Spring is the most popular application development framework for enterprise Java. 
+Millions of developers around the world use Spring Framework to create high performing, 
+easily testable, and reusable code.
+
+Spring framework is an open source Java platform. 
+It was initially written by Rod Johnson and was first released under the Apache 2.0 license in June 2003.
+
+Spring is lightweight when it comes to size and transparency. 
+The basic version of Spring framework is around 2MB.
+
+The core features of the Spring Framework can be used in developing any Java application, 
+but there are extensions for building web applications on top of the Java EE platform. 
+Spring framework targets to make J2EE development easier to use 
+and promotes good programming practices by enabling a POJO-based programming model.
+
+Dependency Injection (DI)
+The technology that Spring is most identified with is the Dependency Injection (DI) flavor of Inversion of Control.
+The Inversion of Control (IoC) is a general concept, and it can be expressed in many different ways. Dependency Injection is merely one concrete example of Inversion of Control.
+
+When writing a complex Java application, 
+application classes should be as independent as possible of other 
+Java classes to increase the possibility to reuse these classes and to test them independently of other classes 
+while unit testing. Dependency Injection helps in gluing these classes together and at the same time keeping them independent.
+
+What is dependency injection exactly? 
+Let's look at these two words separately. 
+Here the dependency part translates into an association between two classes.
+For example, class A is dependent of class B. Now, let's look at the second part, 
+injection. All this means is, class B will get injected into class A by the IoC.
+
+Dependency injection can happen in the way of passing parameters to the constructor or 
+by post-construction using setter methods. 
+As Dependency Injection is the heart of Spring Framework,
+ we will explain this concept in a separate chapter with relevant example.
+
+IoC Container
+The IoC container is responsible to instantiate, configure and assemble the objects. 
+The IoC container gets informations from the XML file and works accordingly.The main
+ tasks performed by IoC container are:
+to instantiate the application class
+to configure the object
+to assemble the dependencies between the objects
+There are two types of IoC containers. They are:
+
+
+Difference between BeanFactory and the ApplicationContext
+The org.springframework.beans.factory.BeanFactory and the org.springframework.context.ApplicationContext
+ interfaces acts as the IoC container. The ApplicationContext interface is built on top of
+  the BeanFactory interface. It adds some extra functionality than BeanFactory such as 
+  simple integration with Spring's AOP, message resource handling (for I18N), event 
+  propagation, application layer specific context (e.g. WebApplicationContext) for web 
+  application. So it is better to use ApplicationContext than BeanFactory.
+
+AOP-Aspect-Oriented Programming (AOP) complements Object-Oriented Programming (OOP) by providing another way of thinking about program structure.
+Key unit of modularity in OOP is the class. Key unit of modularity in AOP is the aspect.
+Aspects enable the modularization of concerns that cut across multiple types and objects (crosscutting concerns).
+
+AOP is used in the Spring Framework to provide declarative enterprise services,
+especially as a replacement for EJB declarative services (such as transaction management) and allow users to implement custom aspects
+complementing their use of OOP with AOP.
+Aspect: a modularization of a concern that cuts across multiple classes.
+Join point: a point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.
+Advice: action taken by an aspect at a particular join point.
+Pointcut: a predicate that matches join points. Advice is associated with a pointcut expression and runs at any join point matched by the pointcut.
+Introduction: declaring additional methods or fields on behalf of a type. Spring AOP allows you to introduce new interfaces (and its implementation)
+Target object: object being advised by one or more aspects.
+AOP proxy: an object created by the AOP framework in order to implement the aspect contracts.
+Weaving: linking aspects with other application types or objects to create an advised object.
+
+Types of advice Question
+
+Before advice: Advice that executes before a join point, but which does not have the ability to prevent execution flow proceeding to the join point (unless it throws an exception).
+After returning advice: Advice to be executed after a join point completes normally: for example, if a method returns without throwing an exception.
+After throwing advice: Advice to be executed if a method exits by throwing an exception.
+After (finally) advice: Advice to be executed regardless of the means by which a join point exits (normal or exceptional return).
+Around advice: Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation. 
+It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception.
