@@ -20,6 +20,7 @@ public class contactController {
     @RequestMapping("/user/{userId}")
     public List<Contact> getContacts(@PathVariable("userId") Long userId){
 
+
         return this.contactService.getContactsOfUser(userId);
     }
 }
